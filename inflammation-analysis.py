@@ -14,11 +14,11 @@ def main(args):
     - passing data between models and views
     """
     inFiles = args.infiles
-    if not isinstance(InFiles, list):
-        InFiles = [args.infiles]
+    if not isinstance(inFiles, list):
+        inFiles = [args.infiles]
 
 
-    for filename in InFiles:
+    for filename in inFiles:
         inflammation_data = models.load_csv(filename)
 
         view_data = {'average': models.daily_mean(inflammation_data),
